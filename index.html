@@ -1,4 +1,4 @@
-</!DOCTYPE html>
+ </!DOCTYPE html>
 <html>
 <head>
 	<title>Crystals_Collector</title>
@@ -6,6 +6,7 @@
 </head>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Bangers|Comfortaa|Lobster|Luckiest+Guy|Raleway|Sigmar+One|VT323" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
@@ -16,7 +17,7 @@
 <body>
 <!--create a div w/ class box1 that titles the game "Crystals Collector"-->
 
-	<div class="box1"><h3>Crystals Collector!</h3> </div>
+	<div class="content"><div class="box1">Crystals Collector!</div>
 
 <!--create a div w/ class box2 that explains the instructions of the game-->
 
@@ -25,20 +26,21 @@
 
 <!--create a div w/ class box3 that generates a ranodm number between 19-120 every time the game restarts-->
 
-	<div class="box3">Click to generate number!</div>
+	<div class="container"><div class="box3"></div>
 
 
 <!--create a div on the same row as as box3 w/ class box4 that generates to values: "wins: " and "loses: "
 also resets everytime game resets-->
 
-	<div class="box4"><p>Wins:   </p><p>Loses:  </p></div>
+	<div class="box4"><p>Wins:<span class="win"></span></p><p>Loses:<span  class="lose"></span></p></div> </div>
 
 <!--create four buttons w/ classes gem1, gem2, gem3, gem4, that generate random values between 1 and 12 each time the game resets-->
 
-	<div class="row"><button class="gem1"> </button>
-	<button class="gem2"></button>
-	<button class="gem3"></button>
-	<button class="gem4"></button></div>
+	<div class="row">
+	<button class="gem1"><img src="assets/images/crstal1.png"> </button>
+	<button class="gem2"><img src="assets/images/crstal2.png"></button>
+	<button class="gem3"><img src="assets/images/crstal3.png"></button>
+	<button class="gem4"><img src="assets/images/Pasted image at 2017_02_18 12_33 PM.png"></button></div>
 
 <!--create a div with class box5 that states "Your Score Is:"-->
 
@@ -46,68 +48,75 @@ also resets everytime game resets-->
 
 <!--create a div with class box6 that adds the values of buttons 1-4 when clicked. Resets to 0 when game restarts-->
 
-	<div class="box6">[[total score goes here]]</div>
+	<div class="box6"></div></div>
 
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
 
-var number = [];
-
-	for (var i=0; i<number.length; i++){
-		var random = $("<div>")
-
-		random.addClass("box3");}
-
-		var random =
-		$(".box3").on("click", function() {
-			var random = Math.floor(Math.random() * 120) + 19;
-			$(".box3").html(random);
-
-		})
 
 
 
-var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]; 
+		var wins = 0;
+		var loses =0;
+		var random = Math.floor(Math.random() * 120) + 19;
+		$(".box3").html(random);
 
- 	for (var i=0; i<numbers.length; i++)
- 	{
- 		var buttons = $("<button>");
+		var gem1 = Math.floor(Math.random() * 12) + 1;
+		var gem2 = Math.floor(Math.random() * 12) + 1;
+		var gem3 = Math.floor(Math.random() * 12) + 1;
+		var gem4 = Math.floor(Math.random() * 12) + 1;
+		var final = 0;
 
- 		buttons.addClass("gem1 gem2 gem3 gem4");}
-
- 		var buttons =
- 		$(".gem1").on("click", function() {
- 			var buttons = Math.floor(Math.random() * 12) + 1;
- 			$(".gem1").html(buttons); 
-
- 		})
-
- 		var buttons =
- 		$(".gem2").on("click", function() {
- 			var buttons = Math.floor(Math.random() * 12) + 1;
- 			$(".gem2").html(buttons); 
-
- 		})
-
- 		var buttons =
- 		$(".gem3").on("click", function() {
- 			var buttons = Math.floor(Math.random() * 12) + 1;
- 			$(".gem3").html(buttons); 
-
- 		})
+		
 
 
- 		var buttons =
- 		$(".gem4").on("click", function() {
- 			var buttons = Math.floor(Math.random() * 12) + 1;
- 			$(".gem4").html(buttons); 
+		$(".gem1").on("click", function() {
+ 		 final = final + gem1;
+ 		 console.log(final); 
+		$(".box6").html(final);
+		if (final === random) {
+			wins++;
+			$(".win").html(wins); }
+			else if (final > random) {
+			loses++;
+			$(".lose").html(loses); }})
 
- 		})
- 		
- 		
+		$(".gem2").on("click", function() {
+ 		 final = final + gem2;
+ 		 console.log(final);
+ 		 $(".box6").html(final);
+ 		 if (final === random) {
+			wins++;
+			$(".win").html(wins);   }
+			else if (final > random) {
+			loses++;
+			$(".lose").html(loses); }})
 
- 	
+		$(".gem3").on("click", function() {
+ 		 final = final + gem3;
+ 		 console.log(final);
+ 		 $(".box6").html(final);
+ 		 if (final === random) {
+			wins++;
+			$(".win").html(wins);   }
+			else if (final > random) {
+			loses++;
+			$(".lose").html(loses); }})
+
+		$(".gem4").on("click", function() {
+ 		 final = final + gem4;
+ 		 console.log(final);
+ 		 $(".box6").html(final); 
+ 		 if (final === random) {
+			wins++;
+			$(".win").html(wins);  }
+			else if (final > random) {
+			loses++;
+			$(".lose").html(loses); }})
+
+		
+
  	</script>
  
 

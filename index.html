@@ -73,49 +73,61 @@ also resets everytime game resets-->
 
 		$(".gem1").on("click", function() {
  		 final = final + gem1;
- 		 console.log(final); 
 		$(".box6").html(final);
-		if (final === random) {
-			wins++;
-			$(".win").html(wins); }
-			else if (final > random) {
-			loses++;
-			$(".lose").html(loses); }})
+			
+			if (final === random) {
+				wins++;
+				$(".win").html(wins);
+				}
+				else if (final > random) {
+				loses++;
+				$(".lose").html(loses); }})
 
 		$(".gem2").on("click", function() {
  		 final = final + gem2;
- 		 console.log(final);
- 		 $(".box6").html(final);
- 		 if (final === random) {
-			wins++;
-			$(".win").html(wins);   }
-			else if (final > random) {
-			loses++;
-			$(".lose").html(loses); }})
+ 				
+	 		 $(".box6").html(final);
+	 		 if (final === random) {
+				wins++;
+				$(".win").html(wins);   }
+				else if (final > random) {
+				loses++;
+				$(".lose").html(loses); }})
 
 		$(".gem3").on("click", function() {
  		 final = final + gem3;
- 		 console.log(final);
- 		 $(".box6").html(final);
- 		 if (final === random) {
-			wins++;
-			$(".win").html(wins);   }
-			else if (final > random) {
-			loses++;
-			$(".lose").html(loses); }})
+	 		 
+	 		 $(".box6").html(final);
+	 		 if (final === random) {
+				wins++;
+				$(".win").html(wins);   }
+				else if (final > random) {
+				loses++;
+				$(".lose").html(loses); }})
 
 		$(".gem4").on("click", function() {
  		 final = final + gem4;
- 		 console.log(final);
- 		 $(".box6").html(final); 
- 		 if (final === random) {
-			wins++;
-			$(".win").html(wins);  }
-			else if (final > random) {
-			loses++;
-			$(".lose").html(loses); }})
+ 		 
+ 		 	 $(".box6").html(final); 
+	 		 if (final === random) {
+				wins++;
+				$(".win").html(wins);
+				$(".box3").html(random);  }
+				else if (final > random) {
+				loses++;
+				$(".lose").html(loses); 
+
+				}})
 
 		
+
+
+		
+
+		//create a reset function that sets the value of the final score back to 0, and the values of the random number/gems to the random numbers they were. put this function after every win if and lose else. test to see if it works 
+
+		
+
 
  	</script>
  
